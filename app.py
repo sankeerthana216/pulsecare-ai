@@ -21,12 +21,13 @@ class EmptyFolderError(Exception):
 # Advanced Visual Redesign Styling (Emerald Green, Dark Slate, White, Gold, Blue)
 st.markdown("""
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
     
     /* Global CSS Reset & Font Setup */
     html, body, [class*="css"] {
-        font-family: 'Outfit', sans-serif !important;
+        font-family: 'Inter', sans-serif !important;
         background-color: #F8FAFC;
+        color: #334155;
     }
     .stApp {
         background-color: #F8FAFC;
@@ -43,7 +44,7 @@ st.markdown("""
         height: 8px;
     }
     ::-webkit-scrollbar-track {
-        background: #F1F5F9;
+        background: #F8FAFC;
     }
     ::-webkit-scrollbar-thumb {
         background: #CBD5E1;
@@ -55,10 +56,16 @@ st.markdown("""
     
     /* Typography Styles */
     h1, h2, h3, h4, h5, h6 {
-        font-family: 'Outfit', sans-serif !important;
-        color: #1E293B !important;
+        font-family: 'Poppins', sans-serif !important;
+        color: #0F172A !important;
         font-weight: 700 !important;
     }
+    
+    /* Global body paragraphs and basic text colors */
+    p, span, li, label, div {
+        font-family: 'Inter', sans-serif;
+    }
+    
     .section-header {
         font-size: 1.75rem;
         font-weight: 800;
@@ -73,12 +80,12 @@ st.markdown("""
     
     /* Modern Welcome Banner (SaaS Gradient Style) */
     .welcome-banner {
-        background: linear-gradient(135deg, #0F172A 0%, #064E3B 100%);
+        background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%);
         padding: 2.5rem;
         border-radius: 16px;
         color: white;
         margin-bottom: 2rem;
-        box-shadow: 0 10px 25px -5px rgba(6, 78, 59, 0.3);
+        box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.15);
         position: relative;
         overflow: hidden;
     }
@@ -87,7 +94,7 @@ st.markdown("""
         position: absolute;
         width: 300px;
         height: 300px;
-        background: radial-gradient(circle, rgba(16,185,129,0.15) 0%, rgba(0,0,0,0) 70%);
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0) 70%);
         top: -100px;
         right: -50px;
         border-radius: 50%;
@@ -100,7 +107,7 @@ st.markdown("""
         letter-spacing: -0.02em;
     }
     .welcome-banner p {
-        color: #A7F3D0;
+        color: #F8FAFC !important;
         margin: 8px 0 0 0;
         font-size: 1.2rem;
         font-weight: 400;
@@ -114,20 +121,20 @@ st.markdown("""
         margin-bottom: 2rem;
     }
     .kpi-card {
-        background-color: white;
-        border: 1px solid #E2E8F0;
-        border-radius: 16px;
-        padding: 1.5rem;
-        display: flex;
-        align-items: center;
-        gap: 1.25rem;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        background-color: #FFFFFF !important;
+        border: 1px solid #E2E8F0 !important;
+        border-radius: 16px !important;
+        padding: 1.5rem !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 1.25rem !important;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
     }
     .kpi-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 20px -8px rgba(16, 185, 129, 0.15);
-        border-color: #10B981;
+        transform: translateY(-4px) !important;
+        box-shadow: 0 10px 20px rgba(30, 58, 138, 0.08) !important;
+        border-color: #2563EB !important;
     }
     .kpi-icon-box {
         width: 48px;
@@ -139,25 +146,25 @@ st.markdown("""
         font-size: 1.6rem;
     }
     .icon-emerald { background-color: #ECFDF5; color: #10B981; }
-    .icon-blue { background-color: #EFF6FF; color: #3B82F6; }
+    .icon-blue { background-color: #EFF6FF; color: #2563EB; }
     .icon-gold { background-color: #FFFBEB; color: #F59E0B; }
     .icon-slate { background-color: #F8FAFC; color: #64748B; }
     .kpi-details {
         flex: 1;
     }
     .kpi-label {
-        font-size: 0.8rem;
-        color: #64748B;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
+        font-size: 0.8rem !important;
+        color: #64748B !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.05em !important;
     }
     .kpi-value {
-        font-size: 1.85rem;
-        color: #0F172A;
-        font-weight: 800;
-        line-height: 1.2;
-        margin-top: 0.15rem;
+        font-size: 1.85rem !important;
+        color: #0F172A !important;
+        font-weight: 800 !important;
+        line-height: 1.2 !important;
+        margin-top: 0.15rem !important;
     }
     .kpi-status {
         font-size: 0.8rem;
@@ -168,22 +175,22 @@ st.markdown("""
         gap: 0.25rem;
     }
     .status-up { color: #10B981; }
-    .status-neutral { color: #3B82F6; }
+    .status-neutral { color: #2563EB; }
     .status-accent { color: #F59E0B; }
     
     /* Interactive Card Container */
     .premium-card {
-        background-color: white;
-        border: 1px solid #E2E8F0;
-        border-radius: 16px;
-        padding: 1.5rem;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
-        margin-bottom: 1.25rem;
-        transition: all 0.25s ease;
+        background-color: #FFFFFF !important;
+        border: 1px solid #E2E8F0 !important;
+        border-radius: 16px !important;
+        padding: 1.5rem !important;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
+        margin-bottom: 1.25rem !important;
+        transition: all 0.25s ease !important;
     }
     .premium-card:hover {
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
-        border-color: #CBD5E1;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08) !important;
+        border-color: #CBD5E1 !important;
     }
     
     /* Recent Activity Feed */
@@ -209,39 +216,39 @@ st.markdown("""
         flex-shrink: 0;
     }
     .badge-dot-green { background-color: #10B981; box-shadow: 0 0 0 4px #ECFDF5; }
-    .badge-dot-blue { background-color: #3B82F6; box-shadow: 0 0 0 4px #EFF6FF; }
+    .badge-dot-blue { background-color: #2563EB; box-shadow: 0 0 0 4px #EFF6FF; }
     .badge-dot-gold { background-color: #F59E0B; box-shadow: 0 0 0 4px #FFFBEB; }
     .activity-content {
         flex: 1;
         font-size: 0.92rem;
-        color: #334155;
+        color: #334155 !important;
         line-height: 1.4;
     }
     .activity-time {
         display: block;
         font-size: 0.78rem;
-        color: #94A3B8;
+        color: #64748B !important;
         margin-top: 0.2rem;
     }
     
     /* Modern Buttons override */
     div.stButton > button {
-        background-color: #10B981 !important;
+        background-color: #1E3A8A !important;
         color: white !important;
-        border: 1px solid #10B981 !important;
+        border: 1px solid #1E3A8A !important;
         border-radius: 10px !important;
         padding: 0.6rem 1.6rem !important;
         font-weight: 600 !important;
-        box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.1), 0 2px 4px -1px rgba(16, 185, 129, 0.05) !important;
-        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        box-shadow: 0 4px 6px -1px rgba(30, 58, 138, 0.1) !important;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
         width: 100%;
         text-align: center;
     }
     div.stButton > button:hover {
-        background-color: #059669 !important;
-        border-color: #059669 !important;
+        background-color: #2563EB !important;
+        border-color: #2563EB !important;
         transform: translateY(-1px) !important;
-        box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.2) !important;
+        box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2) !important;
     }
     div.stButton > button:active {
         transform: translateY(1px) !important;
@@ -251,7 +258,7 @@ st.markdown("""
     .quick-action-header {
         font-size: 0.95rem;
         font-weight: 700;
-        color: #64748B;
+        color: #64748B !important;
         text-transform: uppercase;
         margin-bottom: 0.75rem;
         letter-spacing: 0.05em;
@@ -259,22 +266,193 @@ st.markdown("""
     
     /* Sidebar premium redesign */
     [data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #0F172A 0%, #1E293B 100%);
-        border-right: 1px solid #334155;
+        background: linear-gradient(180deg, #1E3A8A 0%, #0F172A 100%);
+        border-right: 1px solid #E2E8F0;
     }
     [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p {
-        color: #94A3B8;
+        color: #E2E8F0;
     }
     
-    /* Style inputs for a modern dashboard look */
-    div[data-baseweb="input"], div[data-baseweb="select"], .stNumberInput input {
-        border-radius: 10px !important;
-        border-color: #E2E8F0 !important;
-        background-color: #FFFFFF !important;
+    /* ========================================================
+       RE-ENGINEERED INPUT FIELDS & accessibility overhauls
+       ======================================================== */
+       
+    /* Force visible labels above every single input/selectbox */
+    label[data-testid="stWidgetLabel"],
+    label[data-testid="stWidgetLabel"] p,
+    label[data-testid="stWidgetLabel"] div,
+    div[data-testid="stWidgetLabel"] p {
+        color: #0F172A !important;
+        font-weight: 600 !important;
+        font-size: 0.92rem !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: block !important;
+        margin-bottom: 0.35rem !important;
     }
-    div[data-baseweb="input"]:focus-within {
-        border-color: #10B981 !important;
-        box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1) !important;
+
+    /* Style for ALL Streamlit text, number, area, select and multiselect controls */
+    div[data-baseweb="input"], 
+    div[data-baseweb="select"], 
+    div[data-baseweb="textarea"],
+    .stTextInput input, 
+    .stNumberInput input, 
+    .stTextArea textarea,
+    .stSelectbox div[data-baseweb="select"],
+    .stMultiSelect div[data-baseweb="select"] {
+        border-radius: 10px !important;
+        border: 1px solid #CBD5E1 !important; /* Proper contrast slate border */
+        background-color: #FFFFFF !important;
+        color: #0F172A !important;
+        font-family: 'Inter', sans-serif !important;
+    }
+    
+    /* Direct raw fields input text values */
+    div[data-baseweb="input"] input,
+    div[data-baseweb="textarea"] textarea,
+    .stTextInput input, 
+    .stNumberInput input, 
+    .stTextArea textarea {
+        background-color: #FFFFFF !important;
+        color: #0F172A !important;
+    }
+
+    /* Selection items text styling inside control box */
+    div[data-baseweb="select"] div[data-testid="stMarkdownContainer"] p,
+    div[data-baseweb="select"] [role="button"],
+    div[data-baseweb="select"] [role="button"] div {
+        color: #0F172A !important;
+        font-family: 'Inter', sans-serif !important;
+    }
+
+    /* High accessibility placeholder text styling */
+    ::placeholder,
+    input::placeholder,
+    textarea::placeholder,
+    .stTextInput input::placeholder,
+    .stNumberInput input::placeholder,
+    .stTextArea textarea::placeholder,
+    div[data-baseweb="input"] input::placeholder,
+    div[data-baseweb="textarea"] textarea::placeholder {
+        color: #64748B !important; /* Visible gray */
+        opacity: 1 !important;
+        -webkit-text-fill-color: #64748B !important;
+    }
+
+    /* Selected selectbox placeholder */
+    div[data-baseweb="select"] div[aria-hidden="true"],
+    div[data-baseweb="select"] div:empty::before,
+    div[data-baseweb="select"] div[class*="-placeholder"] {
+        color: #64748B !important;
+        opacity: 1 !important;
+    }
+    
+    /* Input Fields Focus Glow Animation */
+    div[data-baseweb="input"]:focus-within,
+    div[data-baseweb="select"]:focus-within,
+    div[data-baseweb="textarea"]:focus-within,
+    .stTextInput input:focus,
+    .stNumberInput input:focus,
+    .stTextArea textarea:focus {
+        border-color: #2563EB !important;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15) !important;
+        outline: none !important;
+    }
+
+    /* Multiselect item tags */
+    div[data-baseweb="tag"] {
+        background-color: #EFF6FF !important;
+        color: #1E3A8A !important;
+        border: 1px solid #BFDBFE !important;
+        border-radius: 6px !important;
+    }
+    div[data-baseweb="tag"] span {
+        color: #1E3A8A !important;
+    }
+
+    /* ========================================================
+       DROPDOWN SELECT PORTAL STYLING
+       ======================================================== */
+       
+    /* Portal dropdown container menu override */
+    div[data-baseweb="menu"], 
+    ul[role="listbox"],
+    div[role="listbox"],
+    div[data-testid="stSelectbox"] div[role="listbox"] {
+        background-color: #FFFFFF !important;
+        color: #0F172A !important;
+        border: 1px solid #CBD5E1 !important;
+        border-radius: 8px !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    /* Dropdown elements text styling */
+    div[data-baseweb="menu"] li,
+    div[data-baseweb="menu"] div,
+    ul[role="listbox"] li,
+    ul[role="listbox"] div[role="option"],
+    div[role="listbox"] div,
+    div[role="option"] {
+        background-color: #FFFFFF !important;
+        color: #0F172A !important;
+        font-family: 'Inter', sans-serif !important;
+        font-size: 0.88rem !important;
+        padding: 8px 12px !important;
+        transition: background-color 0.15s ease !important;
+    }
+
+    /* Option selection/hover highlights */
+    div[data-baseweb="menu"] li:hover,
+    div[data-baseweb="menu"] div:hover,
+    ul[role="listbox"] li:hover,
+    ul[role="listbox"] div[role="option"]:hover,
+    div[role="listbox"] div:hover,
+    div[role="option"]:hover,
+    [aria-selected="true"] {
+        background-color: #F1F5F9 !important;
+        color: #0F172A !important;
+        cursor: pointer !important;
+    }
+    
+    /* ========================================================
+       LIGHT THEME TABLE OVERRIDES
+       ======================================================== */
+       
+    div[data-testid="stTable"] table {
+        border-collapse: separate !important;
+        border-spacing: 0 !important;
+        border-radius: 16px !important;
+        overflow: hidden !important;
+        border: 1px solid #E2E8F0 !important;
+        width: 100% !important;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.02) !important;
+    }
+    div[data-testid="stTable"] table th {
+        background-color: #F8FAFC !important;
+        color: #0F172A !important;
+        font-weight: 700 !important;
+        font-size: 0.825rem !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.05em !important;
+        padding: 12px 16px !important;
+        border-bottom: 2px solid #E2E8F0 !important;
+    }
+    div[data-testid="stTable"] table td {
+        background-color: #FFFFFF !important;
+        color: #334155 !important;
+        font-size: 0.875rem !important;
+        padding: 12px 16px !important;
+        border-bottom: 1px solid #E2E8F0 !important;
+    }
+    /* Zebra alternate rows */
+    div[data-testid="stTable"] table tr:nth-child(even) td {
+        background-color: #F8FAFC !important;
+    }
+    div[data-testid="stTable"] table tr:last-child td {
+        border-bottom: none !important;
+    }
+    div[data-testid="stTable"] table tr:hover td {
+        background-color: #F1F5F9 !important;
     }
     
     /* Visual Trace Cards (Sorting/Searching) */
@@ -290,7 +468,7 @@ st.markdown("""
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.01);
     }
     .trace-block-compare {
-        border-left: 5px solid #3B82F6;
+        border-left: 5px solid #2563EB;
     }
     .trace-block-swap {
         border-left: 5px solid #10B981;
@@ -314,7 +492,7 @@ st.markdown("""
     .tag-gold { background-color: #FEF3C7; color: #D97706; }
     .trace-msg {
         font-size: 0.88rem;
-        color: #334155;
+        color: #0F172A !important;
         font-weight: 500;
     }
     
@@ -328,24 +506,24 @@ st.markdown("""
         padding: 1rem;
     }
     .podium-card {
-        background-color: white;
-        border: 1px solid #E2E8F0;
-        border-radius: 16px;
-        padding: 1.5rem 1rem;
-        text-align: center;
-        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
-        width: 140px;
-        transition: all 0.3s ease;
+        background-color: #FFFFFF !important;
+        border: 1px solid #E2E8F0 !important;
+        border-radius: 16px !important;
+        padding: 1.5rem 1rem !important;
+        text-align: center !important;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
+        width: 140px !important;
+        transition: all 0.3s ease !important;
     }
     .podium-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 10px 15px -3px rgba(0,0,0,0.06);
+        transform: translateY(-4px) !important;
+        box-shadow: 0 10px 15px -3px rgba(0,0,0,0.06) !important;
     }
     .podium-1st {
         height: 180px;
-        border: 2px solid #F59E0B;
+        border: 2px solid #F59E0B !important;
         position: relative;
-        background: linear-gradient(180deg, #FFFFFF 0%, #FEF3C7 100%);
+        background: linear-gradient(180deg, #FFFFFF 0%, #FEF3C7 100%) !important;
     }
     .podium-1st::before {
         content: "👑";
@@ -357,11 +535,11 @@ st.markdown("""
     }
     .podium-2nd {
         height: 145px;
-        background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%);
+        background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%) !important;
     }
     .podium-3rd {
         height: 125px;
-        background: linear-gradient(180deg, #FFFFFF 0%, #FAF7F2 100%);
+        background: linear-gradient(180deg, #FFFFFF 0%, #FAF7F2 100%) !important;
     }
     .podium-num {
         font-size: 1.85rem;
@@ -369,7 +547,7 @@ st.markdown("""
         margin-bottom: 0.3rem;
     }
     .podium-1st .podium-num { color: #D97706; }
-    .podium-2nd .podium-num { color: #64748B; }
+    .podium-2nd .podium-num { color: #64748B !important; }
     .podium-3rd .podium-num { color: #B45309; }
     
     .podium-name-txt {
@@ -382,14 +560,14 @@ st.markdown("""
     }
     .podium-score-txt {
         font-size: 0.8rem;
-        color: #64748B;
+        color: #64748B !important;
         font-weight: 600;
         margin-top: 0.2rem;
     }
     
     /* Academic Assistant Chat customizations */
     .assistant-suggest-chip {
-        background-color: white;
+        background-color: #FFFFFF;
         border: 1px solid #E2E8F0;
         border-radius: 20px;
         padding: 0.45rem 1rem;
@@ -403,20 +581,20 @@ st.markdown("""
         transition: all 0.2s ease;
     }
     .assistant-suggest-chip:hover {
-        background-color: #ECFDF5;
-        border-color: #10B981;
-        color: #047857;
+        background-color: #EFF6FF;
+        border-color: #2563EB;
+        color: #1E3A8A;
     }
     
     /* Financial Bill Card */
     .bill-invoice {
-        background-color: #FFFFFF;
-        border: 1px solid #E2E8F0;
-        border-radius: 16px;
-        padding: 2rem;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.02);
-        max-width: 500px;
-        margin: 0 auto;
+        background-color: #FFFFFF !important;
+        border: 1px solid #E2E8F0 !important;
+        border-radius: 16px !important;
+        padding: 2rem !important;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
+        max-width: 500px !important;
+        margin: 0 auto !important;
     }
     .invoice-header {
         border-bottom: 2px solid #F1F5F9;
@@ -439,7 +617,7 @@ st.markdown("""
         padding: 0.65rem 0;
         border-bottom: 1px dashed #E2E8F0;
         font-size: 0.95rem;
-        color: #334155;
+        color: #334155 !important;
     }
     .invoice-total-row {
         display: flex;
@@ -447,7 +625,7 @@ st.markdown("""
         padding-top: 1.25rem;
         font-weight: 800;
         font-size: 1.35rem;
-        color: #065F46;
+        color: #10B981;
     }
     
     /* Complete Sidebar & Collapsed Control Removal */
@@ -486,10 +664,10 @@ st.markdown("""
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        font-family: 'Outfit', sans-serif;
+        font-family: 'Poppins', sans-serif;
         font-weight: 800;
         font-size: 1.15rem;
-        color: #0F172A;
+        color: #1E3A8A;
         letter-spacing: -0.02em;
         white-space: nowrap;
     }
@@ -515,11 +693,11 @@ st.markdown("""
         height: 36px;
         padding: 0 0.8rem;
         border-radius: 8px;
-        font-family: 'Outfit', sans-serif;
+        font-family: 'Poppins', sans-serif;
         font-weight: 600;
         font-size: 0.85rem;
         text-decoration: none !important;
-        color: #475569 !important;
+        color: #64748B !important;
         background-color: transparent;
         border: 1px solid transparent;
         transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -527,14 +705,14 @@ st.markdown("""
     }
     .menu-item:hover {
         background-color: #F1F5F9;
-        color: #10B981 !important;
+        color: #2563EB !important;
         transform: translateY(-1px);
     }
     .menu-item.active {
-        background-color: #10B981 !important;
+        background-color: #1E3A8A !important;
         color: #FFFFFF !important;
-        border-color: #10B981 !important;
-        box-shadow: 0 0 12px rgba(16, 185, 129, 0.35) !important;
+        border-color: #1E3A8A !important;
+        box-shadow: 0 4px 12px rgba(30, 58, 138, 0.25) !important;
     }
     
     /* Profile user badge */
@@ -544,14 +722,14 @@ st.markdown("""
         white-space: nowrap;
     }
     .profile-badge {
-        background-color: #ECFDF5;
-        color: #047857;
+        background-color: #EFF6FF;
+        color: #1E3A8A;
         padding: 0.35rem 0.85rem;
         border-radius: 9999px;
         font-weight: 700;
         font-size: 0.8rem;
-        border: 1px solid #A7F3D0;
-        font-family: 'Outfit', sans-serif;
+        border: 1px solid #BFDBFE;
+        font-family: 'Poppins', sans-serif;
     }
 
     /* Padding offset for content */
@@ -839,11 +1017,11 @@ elif st.session_state.current_page == "Student Registration":
         p_grade, p_remark = calculate_grade_and_remark(preview_marks)
         
         # Visual color for grade card
-        color_map = {"A": "#10B981", "B": "#3B82F6", "C": "#6366F1", "D": "#F59E0B", "E": "#8B5CF6", "F": "#EF4444"}
+        color_map = {"A": "#10B981", "B": "#2563EB", "C": "#1E3A8A", "D": "#F59E0B", "E": "#8B5CF6", "F": "#EF4444"}
         grade_color = color_map.get(p_grade, "#10B981")
         
         st.markdown(f"""
-            <div style='background-color: white; border: 1px solid #E2E8F0; border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; border-left: 6px solid {grade_color};'>
+            <div style='background-color: white; border: 1px solid #E2E8F0; border-radius: 16px; padding: 1.5rem; display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; border-left: 6px solid {grade_color}; box-shadow: 0 2px 10px rgba(0,0,0,0.05);'>
                 <div style='background-color: {grade_color}15; color: {grade_color}; width: 64px; height: 64px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; font-weight: 800; border: 1px solid {grade_color}30;'>
                     {p_grade}
                 </div>
@@ -913,7 +1091,7 @@ elif st.session_state.current_page == "Course Enrollment":
         
         total_credits = sum(c["Credits"] for c in st.session_state.courses)
         st.markdown(f"""
-            <div class='kpi-card' style='border-left: 5px solid #3B82F6; margin-top: 1.5rem;'>
+            <div class='kpi-card' style='border-left: 5px solid #2563EB; margin-top: 1.5rem;'>
                 <div class="kpi-icon-box icon-blue">📖</div>
                 <div class="kpi-details">
                     <div class="kpi-label">Cumulative Curriculum Workload</div>
@@ -929,7 +1107,7 @@ elif st.session_state.current_page == "Student Record Management":
     st.markdown("<h2 class='section-header'>🧱 Python Collections (Lists, Dictionaries, Sets)</h2>", unsafe_allow_html=True)
     
     st.markdown("""
-        <div style='background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem; border-left: 4px solid #10B981;'>
+        <div style='background-color: white; border: 1px solid #E2E8F0; border-radius: 16px; padding: 1.25rem; margin-bottom: 1.5rem; border-left: 4px solid #10B981; box-shadow: 0 2px 10px rgba(0,0,0,0.05);'>
             <h4 style='margin:0; font-size:1.05rem; color:#0F172A;'>Data Collection Design Structure</h4>
             <p style='margin:4px 0 0 0; font-size:0.88rem; color:#64748B; line-height:1.4;'>
                 This interface maps current student states to physical collections: 
@@ -1014,7 +1192,7 @@ elif st.session_state.current_page == "Student Record Management":
                 item = records_dict[search_id]
                 grade, remark = calculate_grade_and_remark(item["Marks"])
                 st.markdown(f"""
-                    <div style='background-color: white; border: 1px solid #E2E8F0; border-radius: 12px; padding: 1.5rem; max-width: 480px; border-left: 6px solid #3B82F6;'>
+                    <div style='background-color: white; border: 1px solid #E2E8F0; border-radius: 16px; padding: 1.5rem; max-width: 480px; border-left: 6px solid #2563EB; box-shadow: 0 2px 10px rgba(0,0,0,0.05);'>
                         <h4 style='margin:0 0 10px 0; font-size:1.15rem; color:#0F172A;'>Registry Profile Found ({search_id})</h4>
                         <p style='margin: 0.4rem 0;'><b>Student Name:</b> {item['Name']}</p>
                         <p style='margin: 0.4rem 0;'><b>Subject Area:</b> {item['Subject']}</p>
@@ -1253,7 +1431,7 @@ elif st.session_state.current_page == "Sorting & Searching Lab":
                         match = arr[found_idx]
                         st.success(f"Successful! Match located at original list index {found_idx}.")
                         st.markdown(f"""
-                            <div style='background-color: white; border: 1px solid #E2E8F0; border-radius: 12px; padding: 1.5rem; max-width: 450px; border-left: 5px solid #10B981;'>
+                            <div style='background-color: white; border: 1px solid #E2E8F0; border-radius: 16px; padding: 1.5rem; max-width: 450px; border-left: 5px solid #10B981; box-shadow: 0 2px 10px rgba(0,0,0,0.05);'>
                                 <h4 style='margin:0 0 8px 0; font-size:1.1rem; color:#0F172A;'>Registry Details Record</h4>
                                 <p style='margin:0.25rem 0;'><b>Student ID:</b> {match['ID']}</p>
                                 <p style='margin:0.25rem 0;'><b>Student Name:</b> {match['Name']}</p>
@@ -1306,7 +1484,7 @@ elif st.session_state.current_page == "Fee Management System":
             <div class="bill-invoice">
                 <div class="invoice-header">
                     <span class="invoice-title-text">EduSphere Invoice Breakdown</span>
-                    <span style="background-color: #ECFDF5; color: #065F46; font-size: 0.72rem; font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 6px; text-transform: uppercase;">Waiver Applied</span>
+                    <span style="background-color: #ECFDF5; color: #10B981; font-size: 0.72rem; font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 6px; text-transform: uppercase;">Waiver Applied</span>
                 </div>
                 <div class="invoice-item-row">
                     <span>Base Tuition Fee:</span>
@@ -1340,7 +1518,7 @@ elif st.session_state.current_page == "Fee Management System":
         fig, ax = plt.subplots(figsize=(5, 3.8))
         labels = ['Tuition', 'Hostel', 'Transport']
         sizes = [final_tuition, hostel, transport]
-        colors = ['#10B981', '#1E293B', '#3B82F6']
+        colors = ['#10B981', '#1E3A8A', '#2563EB']
         ax.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90, colors=colors,
                wedgeprops=dict(width=0.4, edgecolor='w'))
         ax.set_title("Fee Breakdown Composition Ratio", fontsize=11, fontweight='bold', pad=15)
@@ -1362,7 +1540,7 @@ elif st.session_state.current_page == "Academic File Management":
     st.markdown("<h2 class='section-header'>📂 Academic File System Storage I/O</h2>", unsafe_allow_html=True)
     
     st.markdown("""
-        <div style='background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem; border-left: 4px solid #3B82F6;'>
+        <div style='background-color: white; border: 1px solid #E2E8F0; border-radius: 16px; padding: 1.25rem; margin-bottom: 1.5rem; border-left: 4px solid #2563EB; box-shadow: 0 2px 10px rgba(0,0,0,0.05);'>
             <h4 style='margin:0; font-size:1.05rem; color:#0F172A;'>File Systems I/O Integration Lab</h4>
             <p style='margin:4px 0 0 0; font-size:0.88rem; color:#64748B; line-height:1.4;'>
                 This workspace writes internal session arrays directly to local directory storage (CSV format) and generates summarized performance reports.
@@ -1451,7 +1629,7 @@ elif st.session_state.current_page == "Directory Scanner":
     st.markdown("<h2 class='section-header'>📁 Directory Structure & Exception Handling</h2>", unsafe_allow_html=True)
     
     st.markdown("""
-        <div style='background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem; border-left: 4px solid #F59E0B;'>
+        <div style='background-color: white; border: 1px solid #E2E8F0; border-radius: 16px; padding: 1.25rem; margin-bottom: 1.5rem; border-left: 4px solid #F59E0B; box-shadow: 0 2px 10px rgba(0,0,0,0.05);'>
             <h4 style='margin:0; font-size:1.05rem; color:#0F172A;'>Exception Handling Lab Suite</h4>
             <p style='margin:4px 0 0 0; font-size:0.88rem; color:#64748B; line-height:1.4;'>
                 Validates local file system paths. Captures <b>FileNotFoundError</b>, <b>NotADirectoryError</b>, and raises a user-defined custom exception <b>EmptyFolderError</b>.
@@ -1596,7 +1774,7 @@ elif st.session_state.current_page == "Performance Analytics":
                         <div class="kpi-status status-up">Overall Average Score</div>
                     </div>
                 </div>
-                <div class="kpi-card" style="border-left: 5px solid #3B82F6;">
+                <div class="kpi-card" style="border-left: 5px solid #2563EB;">
                     <div class="kpi-icon-box icon-blue">🎯</div>
                     <div class="kpi-details">
                         <div class="kpi-label">NumPy Median Score</div>
@@ -1625,7 +1803,7 @@ elif st.session_state.current_page == "Performance Analytics":
             """, unsafe_allow_html=True)
             # Matplotlib Bar Chart
             fig, ax = plt.subplots(figsize=(6, 3.8))
-            colors = ['#10B981' if m >= 75 else '#3B82F6' for m in df["Marks"]]
+            colors = ['#10B981' if m >= 75 else '#2563EB' for m in df["Marks"]]
             ax.bar(df["Name"], df["Marks"], color=colors, edgecolor='#E2E8F0', width=0.55)
             ax.set_ylabel("Marks Obtained", fontsize=9, fontweight='semibold')
             ax.set_xlabel("Student Profile Name", fontsize=9, fontweight='semibold')
@@ -1686,7 +1864,7 @@ elif st.session_state.current_page == "Performance Analytics":
             sorted_counts = [counts[g] for g in sorted_grades]
             
             fig_pie, ax_pie = plt.subplots(figsize=(6, 3.8))
-            pie_colors = ['#10B981', '#3B82F6', '#F59E0B', '#EF4444', '#8B5CF6', '#EC4899'][:len(sorted_grades)]
+            pie_colors = ['#10B981', '#2563EB', '#F59E0B', '#EF4444', '#8B5CF6', '#EC4899'][:len(sorted_grades)]
             ax_pie.pie(sorted_counts, labels=sorted_grades, autopct='%1.1f%%', startangle=90, colors=pie_colors,
                        wedgeprops=dict(width=0.4, edgecolor='w'))
             ax_pie.set_title("Registered Grade Ratios", fontsize=10, fontweight='bold')
@@ -1702,7 +1880,7 @@ elif st.session_state.current_page == "Performance Analytics":
             subject_avgs = df.groupby("Subject")["Marks"].mean().reset_index()
             # Plot horizontal averages
             fig_sub, ax_sub = plt.subplots(figsize=(6, 3.8))
-            ax_sub.barh(subject_avgs["Subject"], subject_avgs["Marks"], color='#065E3E', edgecolor='#E2E8F0', height=0.5)
+            ax_sub.barh(subject_avgs["Subject"], subject_avgs["Marks"], color='#1E3A8A', edgecolor='#E2E8F0', height=0.5)
             ax_sub.set_xlabel("Average Marks", fontsize=9, fontweight='semibold')
             ax_sub.set_xlim(0, 110)
             ax_sub.grid(axis='x', linestyle='--', alpha=0.3)
