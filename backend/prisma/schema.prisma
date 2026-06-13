@@ -1,0 +1,80 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id            String         @id @default(uuid())
+  email         String         @unique
+  passwordHash  String         @map("password_hash")
+  role          String         @default("PATIENT") // PATIENT, DOCTOR, ADMIN
+  createdAt     DateTime       @default(now()) @map("created_at")
+  profile       Profile?
+  readings      HealthReading[]
+  alerts        Alert[]
+  refreshTokens RefreshToken[]
+
+  @@map("users")
+}
+
+model Profile {
+  id                     String   @id
+  user                   User     @relation(fields: [id], references: [id], onDelete: Cascade)
+  name                   String
+  age                    Int
+  gender                 String   // MALE, FEMALE, OTHER
+  phone                  String
+  emergencyContactName   String   @map("emergency_contact_name")
+  emergencyContactPhone  String   @map("emergency_contact_phone")
+  heartRateThreshold     Int      @default(100) @map("heart_rate_threshold")
+  temperatureThreshold   Float    @default(38.0) @map("temperature_threshold")
+  updatedAt              DateTime @updatedAt @map("updated_at")
+
+  @@map("profiles")
+}
+
+model HealthReading {
+  id            String   @id @default(uuid())
+  userId        String   @map("user_id")
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  heartRate     Int      @map("heart_rate")
+  temperature   Float
+  oxygenLevel   Int      @map("oxygen_level")
+  bloodPressure String   @map("blood_pressure") // e.g. "120/80"
+  aiAnalysis    String   @map("ai_analysis")
+  status        String   // NORMAL, ELEVATED, EMERGENCY
+  createdAt     DateTime @default(now()) @map("created_at")
+  alerts        Alert[]
+
+  @@map("health_readings")
+}
+
+model Alert {
+  id         String        @id @default(uuid())
+  userId     String        @map("user_id")
+  user       User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  readingId  String?       @map("reading_id")
+  reading    HealthReading? @relation(fields: [readingId], references: [id], onDelete: Cascade)
+  type       String        // FEVER, tachycardia, bradycardia, hypoxia, hypertension
+  message    String
+  severity   String        // WARNING, CRITICAL
+  resolved   Boolean       @default(false)
+  createdAt  DateTime      @default(now()) @map("created_at")
+
+  @@map("alerts")
+}
+
+model RefreshToken {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  token     String   @unique
+  expiresAt DateTime @map("expires_at")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("refresh_tokens")
+}
